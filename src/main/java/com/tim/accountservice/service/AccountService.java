@@ -11,4 +11,5 @@ public interface AccountService {
     AccountDto createAccount(AccountDto accountDto);
     AccountDto updateAccount(long id, AccountDto accountDto);
     void deleteAccount(Long accountId);
+    List<AccountDto> searchAccounts(String keyword);
 }

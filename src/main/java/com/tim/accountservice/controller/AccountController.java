@@ -35,6 +35,12 @@ public class AccountController {
         return ResponseEntity.ok(accounts);
     }
 
+    @GetMapping("/search")
+    public ResponseEntity<List<AccountDto>> searchAccounts(@RequestParam String keyword){
+        List<AccountDto> results = accountService.searchAccounts(keyword);
+        return ResponseEntity.ok(results);
+    }
+
     @PostMapping
     public ResponseEntity<AccountDto> createAccount(@RequestBody AccountDto account) {
         AccountDto createdAccount = accountService.createAccount(account);

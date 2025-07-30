@@ -79,4 +79,11 @@ public class AccountServiceImpl implements AccountService {
         }
         accountRepository.deleteById(accountId);
     }
+
+    public List<AccountDto> searchAccounts(String keyword){
+        List<Account> accounts = accountRepository.searchByKeyword(keyword);
+        return accounts.stream()
+                .map(accountMapper::toDto)
+                .collect(Collectors.toList());
+    }
 }
