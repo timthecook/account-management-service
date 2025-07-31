@@ -24,4 +24,8 @@ public record AccountDto(
         this.transactionId = transactionId == null ? Collections.emptyList() : Collections.unmodifiableList(transactionId);
         this.nickname = nickname;
     }
+
+    public Double getId() {
+        return 0.0;
+    }
 }
