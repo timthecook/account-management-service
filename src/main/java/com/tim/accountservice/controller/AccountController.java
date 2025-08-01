@@ -3,6 +3,7 @@ package com.tim.accountservice.controller;
 import com.tim.accountservice.dto.AccountDto;
 import com.tim.accountservice.repository.AccountRepository;
 import com.tim.accountservice.service.AccountService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,7 +43,7 @@ public class AccountController {
     }
 
     @PostMapping
-    public ResponseEntity<AccountDto> createAccount(@RequestBody AccountDto account) {
+    public ResponseEntity<AccountDto> createAccount(@RequestBody @Valid AccountDto account) {
         AccountDto createdAccount = accountService.createAccount(account);
         return ResponseEntity.ok(createdAccount);
     }
