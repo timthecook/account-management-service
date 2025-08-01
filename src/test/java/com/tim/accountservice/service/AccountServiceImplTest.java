@@ -46,6 +46,7 @@ class AccountServiceImplTest {
                 100.00,
                 List.of(1L, 2L),
                 List.of(10L, 20L),
+                "Test Email",
                 "Test Nickname"
         );
 
@@ -79,7 +80,8 @@ class AccountServiceImplTest {
                 250.0,
                 List.of(1L),
                 List.of(11L),
-                "New Account"
+                "New Account",
+                "New Nickname"
         );
 
         Account accountEntity = new Account();
@@ -102,7 +104,8 @@ class AccountServiceImplTest {
                 250.0,
                 List.of(1L),
                 List.of(11L),
-                "New Account"
+                "New Account",
+                "New Nickname"
         );
 
         when(accountMapper.toEntity(inputDto)).thenReturn(accountEntity);
@@ -136,6 +139,7 @@ class AccountServiceImplTest {
                 300.0,
                 List.of(3L),
                 List.of(30L),
+                "New Email",
                 "Updated Nickname"
         );
 
@@ -187,6 +191,7 @@ class AccountServiceImplTest {
                 150.0,
                 List.of(1L),
                 List.of(2L),
+                "New Email",
                 "Doesn't Matter"
         );
         when(accountRepository.findById(accountId)).thenReturn(Optional.empty());
