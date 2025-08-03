@@ -40,7 +40,4 @@ public record AccountDto(
         this.email = email;
     }
 
-    public Double getId() {
-        return 0.0;
-    }
 }

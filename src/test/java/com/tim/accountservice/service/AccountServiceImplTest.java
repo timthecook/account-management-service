@@ -59,6 +59,8 @@ class AccountServiceImplTest {
         // Assert
         assertNotNull(result);
         assertEquals(accountId, result.id());
+        assertEquals("Test Email", result.email());
+        assertEquals("Test Nickname", result.nickname());
     }
 
     @Test
@@ -80,7 +82,7 @@ class AccountServiceImplTest {
                 250.0,
                 List.of(1L),
                 List.of(11L),
-                "New Account",
+                "new.email@example.com",
                 "New Nickname"
         );
 
@@ -104,7 +106,7 @@ class AccountServiceImplTest {
                 250.0,
                 List.of(1L),
                 List.of(11L),
-                "New Account",
+                "new.email@example.com",
                 "New Nickname"
         );
 
@@ -118,7 +120,9 @@ class AccountServiceImplTest {
         // Assert
         assertNotNull(result);
         assertEquals(10L, result.id());
-        assertEquals("New Account", result.nickname());
+        assertEquals("new.email@example.com", result.email());
+        assertEquals("New Nickname", result.nickname());
+
     }
     @Test
     void updateAccount_shouldUpdateAndReturnDto() {
